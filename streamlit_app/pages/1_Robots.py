@@ -63,7 +63,7 @@ ML_MODELS_DIR = ML_MODELS_ROOT
 api = REST(ALPACA_API_KEY, ALPACA_SECRET_KEY, base_url=ALPACA_PAPER_URL)
 
 # === OPENAI CHAT -appel du chat Emilio ===
-init_chat_with_emilio()
+#init_chat_with_emilio()
 st.title("🤖 Robots pour Trading Algorithmique")
 tabs = st.tabs(["🏗️ ML Strategies", "⚙️ Prédictions & Risques","📊 Selection de Strategies"])
 
