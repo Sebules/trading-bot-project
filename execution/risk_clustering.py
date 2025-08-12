@@ -33,7 +33,14 @@ def fetch_daily_returns(symbols: list[str], period_days: int = 252) -> pd.DataFr
     """
     Récupère en une seule requête (en batch) les rendements journaliers pour une liste de symboles.
     """
-    api = REST(ALPACA_API_KEY, ALPACA_SECRET_KEY, base_url=ALPACA_PAPER_URL)
+    try:    
+        api = REST(ALPACA_API_KEY, ALPACA_SECRET_KEY, base_url=ALPACA_PAPER_URL)
+    except Exception:
+      if REST is None or TradingClient is None:
+            st.warning("Mode démo : les fonctionnalités Alpaca sont désactivées sur Streamlit Cloud.")
+            st.info("Pour les ordres et le bot, utilisez l’environnement local / script auto_bot.py.")
+            st.stop()  # ou return si c’est dans une fonction/page
+      
     # On s'assure de ne demander que des données historiques complètes (jusqu'à la veille)
     # pour éviter les erreurs de souscription
     end_date = datetime.now() - timedelta(days=1)
@@ -171,3 +178,4 @@ def build_cluster_scatter(stats: pd.DataFrame, k_clusters: int, search, *,render
 
 
     return fig
+
