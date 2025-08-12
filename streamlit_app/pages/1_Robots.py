@@ -176,7 +176,10 @@ with tabs[1]:
 
     # ─── ➋ SECTION : Sélection par risque ────────────────────────────
     st.header("🛡️ Sélection par facteurs de risque")
-    symbols = get_tradeable_symbols(api)
+    try:
+      symbols = get_tradeable_symbols(api)
+    except Exception:
+      symbols = None
     k = st.number_input("Nombre de clusters", min_value=2, max_value=10, value=5)
 
     if st.button("▶️ Lancer le clustering"):
