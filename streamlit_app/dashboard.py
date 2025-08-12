@@ -32,7 +32,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report, accuracy_score
-from openai import OpenAI
+try:
+  from openai import OpenAI
+except Exception:
+  OpenAI = None
 from alpha_vantage.timeseries import TimeSeries
 try:
   from alpaca.trading.client import TradingClient
