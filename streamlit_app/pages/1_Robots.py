@@ -19,7 +19,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report, accuracy_score
-from alpaca_trade_api.rest import REST
+try:
+  from alpaca_trade_api.rest import REST
+except Exception:
+  REST = None
 
 root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 sys.path.insert(0, root)
