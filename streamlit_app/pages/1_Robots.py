@@ -60,7 +60,10 @@ RESULT_DIR = RESULT_ROOT
 ML_TRAIN_DIR = ML_TRAIN_ROOT
 ML_MODELS_DIR = ML_MODELS_ROOT
 
-api = REST(ALPACA_API_KEY, ALPACA_SECRET_KEY, base_url=ALPACA_PAPER_URL)
+try:
+  api = REST(ALPACA_API_KEY, ALPACA_SECRET_KEY, base_url=ALPACA_PAPER_URL)
+except Exception:
+  api = None
 
 # === OPENAI CHAT -appel du chat Emilio ===
 #init_chat_with_emilio()
