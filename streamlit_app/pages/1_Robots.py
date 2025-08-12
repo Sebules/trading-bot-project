@@ -180,10 +180,7 @@ with tabs[1]:
 
     # ─── ➋ SECTION : Sélection par risque ────────────────────────────
     st.header("🛡️ Sélection par facteurs de risque")
-    if REST is None or TradingClient is None:
-          st.warning("Mode démo : les fonctionnalités Alpaca sont désactivées sur Streamlit Cloud.")
-          st.info("Pour les ordres et le bot, utilisez l’environnement local / script auto_bot.py.")
-          st.stop()  # ou return si c’est dans une fonction/page
+    
     try:
       symbols = get_tradeable_symbols(api)
     except Exception:
