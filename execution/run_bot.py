@@ -5,7 +5,10 @@ import pandas as pd
 from datetime import datetime
 import sys
 import re
-from alpaca_trade_api.rest import REST
+try:
+  from alpaca_trade_api.rest import REST
+except Exception:
+  REST = None
 
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -199,5 +202,6 @@ if __name__ == "__main__":
                 execute_best_signals(symbol, path,mode=args.mode, log=print)
             except Exception as e:
                 print(f"❌ Erreur lors de l'exécution pour {symbol} ➤ {e}")
+
 
     print("✅ Terminé à", datetime.now())
