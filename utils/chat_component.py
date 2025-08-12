@@ -13,7 +13,7 @@ def init_chat_with_emilio():
         api_key = st.secrets["OPENAI_API_KEY"]
     except KeyError:
         st.error("🔑 Clé d'API OpenAI non trouvée. Veuillez la configurer dans `.streamlit/secrets.toml`.")
-        
+        st.stop()
 
     # --- Initialisation du client OpenAI ---
     if "openai_client" not in st.session_state:
@@ -158,3 +158,4 @@ def init_chat_with_emilio():
         st.session_state.chat_history = [{"role": "system", "content": SYSTEM_INSTRUCTION}]
 
         st.rerun()
+
