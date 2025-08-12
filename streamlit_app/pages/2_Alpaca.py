@@ -88,8 +88,14 @@ os.makedirs(RESULT_DIR, exist_ok=True)
 os.makedirs(ML_TRAIN_DIR, exist_ok=True)
 os.makedirs(ML_MODELS_DIR, exist_ok=True)
 
-api = REST(ALPACA_API_KEY, ALPACA_SECRET_KEY, base_url=ALPACA_PAPER_URL)
-client = TradingClient(ALPACA_API_KEY, ALPACA_SECRET_KEY, paper="Paper trading")
+try:
+  api = REST(ALPACA_API_KEY, ALPACA_SECRET_KEY, base_url=ALPACA_PAPER_URL)
+  client = TradingClient(ALPACA_API_KEY, ALPACA_SECRET_KEY, paper="Paper trading")
+except Exception:
+  if REST is None or TradingClient is None:
+        st.warning("Mode démo : les fonctionnalités Alpaca sont désactivées sur Streamlit Cloud.")
+        st.info("Pour les ordres et le bot, utilisez l’environnement local / script auto_bot.py.")
+        st.stop()  # ou return si c’est dans une fonction/page
 
 # === OPENAI CHAT -appel du chat Emilio ===
 init_chat_with_emilio()
