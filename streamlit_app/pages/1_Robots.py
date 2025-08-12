@@ -144,7 +144,7 @@ with tabs[0]:
 with tabs[1]:
     # ─── ➊ SECTION : Sélection par prédiction ─────────────────────────
     st.header("🤖 Sélection par prédiction de mouvement")
-    
+    st.write("Ne fonctionne pas en mode Démo car Alpaca non actif")
     st.subheader("🔄 Charger un modèle pré-entrainé")
 
     model_files = [f for f in os.listdir(ML_MODELS_DIR) if f.endswith(".json")]
