@@ -88,7 +88,7 @@ if "data_dict" not in st.session_state:
     st.session_state["data_dict"] = {}
 
 # === OPENAI CHAT -appel du chat Emilio ===
-init_chat_with_emilio()
+#init_chat_with_emilio()
 
 # === CHARGEMENT DE DONNÉES HISTORIQUES ===
 with tabs[0]:
