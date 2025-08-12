@@ -6,7 +6,10 @@ import time
 import requests
 import streamlit as st
 from datetime import datetime, timedelta
-from alpaca_trade_api.rest import REST, TimeFrame
+try:
+    from alpaca_trade_api.rest import REST, TimeFrame
+except Exception:
+    REST, TimeFrame = None, None
 from alpha_vantage.timeseries import TimeSeries
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -256,4 +259,5 @@ def predict_top_n(model, features_list: list[str], n: int = 20, metadata: dict =
         scores.append((sym, prob))
 
     # trie et top-n
+
     return sorted(scores, key=lambda x: x[1], reverse=True)[:n]
