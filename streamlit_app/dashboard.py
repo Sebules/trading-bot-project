@@ -5,7 +5,10 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import yfinance as yf
 import os
-from alpaca_trade_api.rest import REST, TimeFrame
+try:
+  from alpaca_trade_api.rest import REST, TimeFrame
+except Exception:
+  REST, TimeFrame = None, None
 import io
 
 import sys
@@ -28,7 +31,10 @@ from sklearn.svm import SVC
 from sklearn.metrics import classification_report, accuracy_score
 from openai import OpenAI
 from alpha_vantage.timeseries import TimeSeries
-from alpaca.trading.client import TradingClient
+try:
+  from alpaca.trading.client import TradingClient
+except Exception:
+  TradingClient = None
 from pathlib import Path
 
 
