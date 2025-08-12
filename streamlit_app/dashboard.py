@@ -15,8 +15,11 @@ import sys
 from plotly.subplots import make_subplots
 import plotly.graph_objs as go
 from streamlit_plotly_events import plotly_events
-from plotly.offline import iplot, init_notebook_mode
-init_notebook_mode(connected=True)
+try:
+  from plotly.offline import iplot, init_notebook_mode
+  init_notebook_mode(connected=True)
+except Exception:
+  iplot, init_notebook_mode = None, None
 import ta
 from ta.volatility import BollingerBands
 from itertools import product
