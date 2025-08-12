@@ -1,0 +1,5 @@
+,Total Return (%),Sharpe Ratio,Calmar Ratio,Max Drawdown (%),Win Rate (%),Number of Trades,Profit Factor,Volatilité (%),Decision,Verdict,Score
+RSI,43.5,2.35,5.25,-5.13,62.5,21.0,3.0,11.45,STRATÉGIE À CONSERVER,"Bon Sharpe Ratio (2.35), Excellent Calmar Ratio (5.25), Excellent Facteur de Profit (3.00), Bonne fréquence de gains, Performance OK, Attention! Trop peu de trades si stratégie à court terme",6
+Moving Average,29.02,1.05,1.3,-14.05,50.0,4.0,1.38,17.4,STRATÉGIE À AMÉLIORER,"Sharpe Ratio acceptable (1.05), Raisonnable Calmar Ratio (1.3), Facteur de Profit Passable (1.38), Performance OK, Attention! Trop peu de trades si stratégie à court terme",2
+Bollinger Bands,34.6,0.94,1.62,-13.36,49.29,55.0,1.26,23.06,STRATÉGIE À ÉVITER,"Faible Sharpe Ratio (0.94), Raisonnable Calmar Ratio (1.62), Facteur de Profit Passable (1.26), Performance OK, Attention! Trop peu de trades si stratégie à court terme",0
+Breakout Range,-11.28,-0.86,-0.51,-14.98,47.22,33.0,0.6,8.78,STRATÉGIE À ÉVITER,"Faible Sharpe Ratio (-0.86), Faible Calmar Ratio (-0.51), Facteur de Profit Passable (0.60), Retour négatif, Attention! Trop peu de trades si stratégie à court terme",-3
