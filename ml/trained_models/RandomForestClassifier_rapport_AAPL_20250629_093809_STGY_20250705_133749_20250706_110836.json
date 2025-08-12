@@ -1,0 +1,100 @@
+{
+  "model_name": "RandomForestClassifier_rapport_AAPL_20250629_093809_STGY_20250705_133749_20250706_110836",
+  "created_at": "20250706_110836",
+  "strategies_used": [
+    "Open",
+    "Moving Average",
+    "Equity",
+    "Volume",
+    "Close",
+    "SMA",
+    "High",
+    "Breakout Range",
+    "RSI",
+    "Bollinger Bands",
+    "Low",
+    "bb",
+    "Breakout"
+  ],
+  "features_used": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume",
+    "Moving Average_Signal",
+    "Moving Average_Returns",
+    "Moving Average_Equity",
+    "SMA_Short",
+    "SMA_Long",
+    "Equity_Curve",
+    "RSI_Signal",
+    "RSI_Returns",
+    "RSI_Equity",
+    "RSI",
+    "Breakout Range_Signal",
+    "Breakout Range_Returns",
+    "Breakout Range_Equity",
+    "High_Range",
+    "Low_Range",
+    "Breakout_Haut",
+    "Breakout_Bas",
+    "Breakout_Equity",
+    "Bollinger Bands_Signal",
+    "Bollinger Bands_Returns",
+    "Bollinger Bands_Equity",
+    "bb_middle",
+    "bb_upper",
+    "bb_lower"
+  ],
+  "model_params": {
+    "n_estimators": 150,
+    "random_state": 48
+  },
+  "strategy_params": {
+    "Moving Average": {
+      "short_window": 10,
+      "long_window": 30
+    },
+    "RSI": {
+      "window": 14,
+      "rsi_low": 30,
+      "rsi_high": 70
+    },
+    "Bollinger Bands": {
+      "window_bb": 20,
+      "window_dev_bb": 2
+    },
+    "Breakout Range": {
+      "lookback": 20
+    }
+  },
+  "metrics": {
+    "0": {
+      "precision": 0.4457831325301205,
+      "recall": 0.4625,
+      "f1-score": 0.4539877300613497,
+      "support": 80.0
+    },
+    "1": {
+      "precision": 0.5,
+      "recall": 0.48314606741573035,
+      "f1-score": 0.49142857142857144,
+      "support": 89.0
+    },
+    "accuracy": 0.47337278106508873,
+    "macro avg": {
+      "precision": 0.47289156626506024,
+      "recall": 0.47282303370786516,
+      "f1-score": 0.47270815074496053,
+      "support": 169.0
+    },
+    "weighted avg": {
+      "precision": 0.47433521066514583,
+      "recall": 0.47337278106508873,
+      "f1-score": 0.4737050962251529,
+      "support": 169.0
+    }
+  },
+  "accuracy": 0.47337278106508873
+}

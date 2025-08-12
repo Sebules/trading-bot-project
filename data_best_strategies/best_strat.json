@@ -1,0 +1,123 @@
+{
+  "schema":{
+    "fields":[
+      {
+        "name":"index",
+        "type":"integer"
+      },
+      {
+        "name":"Ticker",
+        "type":"string"
+      },
+      {
+        "name":"Strategy",
+        "type":"string"
+      },
+      {
+        "name":"weight",
+        "type":"number"
+      },
+      {
+        "name":"asof",
+        "type":"string"
+      }
+    ],
+    "primaryKey":[
+      "index"
+    ],
+    "pandas_version":"1.4.0"
+  },
+  "data":[
+    {
+      "index":0,
+      "Ticker":"NEE",
+      "Strategy":"Bollinger Bands",
+      "weight":19.136736979,
+      "asof":"2025-08-12_09-28-16"
+    },
+    {
+      "index":1,
+      "Ticker":"BTC",
+      "Strategy":"RSI",
+      "weight":16.0917113428,
+      "asof":"2025-08-12_09-28-16"
+    },
+    {
+      "index":2,
+      "Ticker":"ORCL",
+      "Strategy":"Breakout Range",
+      "weight":14.2514674974,
+      "asof":"2025-08-12_09-28-16"
+    },
+    {
+      "index":3,
+      "Ticker":"MU",
+      "Strategy":"Breakout Range",
+      "weight":11.8505233787,
+      "asof":"2025-08-12_09-28-16"
+    },
+    {
+      "index":4,
+      "Ticker":"ETH",
+      "Strategy":"Breakout Range",
+      "weight":8.7014382094,
+      "asof":"2025-08-12_09-28-16"
+    },
+    {
+      "index":5,
+      "Ticker":"GOOGL",
+      "Strategy":"RSI",
+      "weight":6.6805740825,
+      "asof":"2025-08-12_09-28-16"
+    },
+    {
+      "index":6,
+      "Ticker":"TSLA",
+      "Strategy":"Breakout Range",
+      "weight":6.0579419868,
+      "asof":"2025-08-12_09-28-16"
+    },
+    {
+      "index":7,
+      "Ticker":"NVDA",
+      "Strategy":"Breakout Range",
+      "weight":5.3355771294,
+      "asof":"2025-08-12_09-28-16"
+    },
+    {
+      "index":8,
+      "Ticker":"MSFT",
+      "Strategy":"Breakout Range",
+      "weight":3.5028813946,
+      "asof":"2025-08-12_09-28-16"
+    },
+    {
+      "index":9,
+      "Ticker":"AAPL",
+      "Strategy":"Bollinger Bands",
+      "weight":3.3889955056,
+      "asof":"2025-08-12_09-28-16"
+    },
+    {
+      "index":10,
+      "Ticker":"JNJ",
+      "Strategy":"Bollinger Bands",
+      "weight":3.3145448635,
+      "asof":"2025-08-12_09-28-16"
+    },
+    {
+      "index":11,
+      "Ticker":"JPM",
+      "Strategy":"RSI",
+      "weight":1.3462135213,
+      "asof":"2025-08-12_09-28-16"
+    },
+    {
+      "index":12,
+      "Ticker":"META",
+      "Strategy":"Moving Average",
+      "weight":0.3413941091,
+      "asof":"2025-08-12_09-28-16"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "model_name": "RandomForestClassifier_rapport_MU_20250711_220622_STGY_20250712_115350_20250712_120411",
+  "created_at": "20250712_120411",
+  "strategies_used": [
+    "Take",
+    "Breakout",
+    "Breakout Range",
+    "Volume",
+    "Close",
+    "Equity",
+    "Open",
+    "Low",
+    "PSAR",
+    "ATR",
+    "Bollinger Bands",
+    "Entry",
+    "Stop",
+    "RSI",
+    "bb",
+    "Moving Average",
+    "SMA",
+    "High"
+  ],
+  "features_used": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume",
+    "Moving Average_Signal",
+    "Moving Average_Returns",
+    "Moving Average_Equity",
+    "SMA_Short",
+    "SMA_Long",
+    "Equity_Curve",
+    "RSI_Signal",
+    "RSI_Returns",
+    "RSI_Equity",
+    "RSI",
+    "Breakout Range_Signal",
+    "Breakout Range_Returns",
+    "Breakout Range_Equity",
+    "High_Range",
+    "Low_Range",
+    "Breakout_Haut",
+    "Breakout_Bas",
+    "Breakout_Equity",
+    "Bollinger Bands_Signal",
+    "Bollinger Bands_Returns",
+    "Bollinger Bands_Equity",
+    "bb_middle",
+    "bb_upper",
+    "bb_lower",
+    "ATR",
+    "Entry_Price",
+    "Stop_Loss_ATR_L",
+    "Take_Profit_ATR_L",
+    "Stop_Loss_ATR_S",
+    "Take_Profit_ATR_S",
+    "PSAR",
+    "Stop_Loss"
+  ],
+  "model_params": {
+    "n_estimators": 450,
+    "random_state": 15
+  },
+  "strategy_params": {
+    "Moving Average": {
+      "short_window": 10,
+      "long_window": 30
+    },
+    "RSI": {
+      "window": 14,
+      "rsi_low": 30,
+      "rsi_high": 70
+    },
+    "Bollinger Bands": {
+      "window_bb": 20,
+      "window_dev_bb": 2
+    },
+    "Breakout Range": {
+      "lookback": 20
+    }
+  },
+  "metrics": {
+    "0": {
+      "precision": 0.5327868852459017,
+      "recall": 0.8125,
+      "f1-score": 0.6435643564356436,
+      "support": 80.0
+    },
+    "1": {
+      "precision": 0.6938775510204082,
+      "recall": 0.37362637362637363,
+      "f1-score": 0.4857142857142857,
+      "support": 91.0
+    },
+    "accuracy": 0.5789473684210527,
+    "macro avg": {
+      "precision": 0.6133322181331549,
+      "recall": 0.5930631868131868,
+      "f1-score": 0.5646393210749646,
+      "support": 171.0
+    },
+    "weighted avg": {
+      "precision": 0.6185134968568963,
+      "recall": 0.5789473684210527,
+      "f1-score": 0.5595622720166754,
+      "support": 171.0
+    }
+  },
+  "accuracy": 0.5789473684210527
+}

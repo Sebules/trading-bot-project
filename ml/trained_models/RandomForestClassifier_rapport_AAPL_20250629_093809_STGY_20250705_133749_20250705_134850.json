@@ -1,0 +1,100 @@
+{
+  "model_name": "RandomForestClassifier_rapport_AAPL_20250629_093809_STGY_20250705_133749_20250705_134850",
+  "created_at": "20250705_134850",
+  "strategies_used": [
+    "RSI",
+    "Breakout Range",
+    "High",
+    "Moving Average",
+    "Close",
+    "SMA",
+    "Equity",
+    "bb",
+    "Bollinger Bands",
+    "Low",
+    "Volume",
+    "Open",
+    "Breakout"
+  ],
+  "features_used": [
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume",
+    "Moving Average_Signal",
+    "Moving Average_Returns",
+    "Moving Average_Equity",
+    "SMA_Short",
+    "SMA_Long",
+    "Equity_Curve",
+    "RSI_Signal",
+    "RSI_Returns",
+    "RSI_Equity",
+    "RSI",
+    "Breakout Range_Signal",
+    "Breakout Range_Returns",
+    "Breakout Range_Equity",
+    "High_Range",
+    "Low_Range",
+    "Breakout_Haut",
+    "Breakout_Bas",
+    "Breakout_Equity",
+    "Bollinger Bands_Signal",
+    "Bollinger Bands_Returns",
+    "Bollinger Bands_Equity",
+    "bb_middle",
+    "bb_upper",
+    "bb_lower"
+  ],
+  "model_params": {
+    "n_estimators": 100,
+    "random_state": 42
+  },
+  "strategy_params": {
+    "MovingAverage": {
+      "short_window": 10,
+      "long_window": 30
+    },
+    "RSI": {
+      "window": 14,
+      "rsi_low": 30,
+      "rsi_high": 70
+    },
+    "Bollinger Bands": {
+      "window_bb": 20,
+      "window_dev_bb": 2
+    },
+    "Breakout Range": {
+      "lookback": 20
+    }
+  },
+  "metrics": {
+    "0": {
+      "precision": 0.4329896907216495,
+      "recall": 0.525,
+      "f1-score": 0.4745762711864407,
+      "support": 80.0
+    },
+    "1": {
+      "precision": 0.4722222222222222,
+      "recall": 0.38202247191011235,
+      "f1-score": 0.422360248447205,
+      "support": 89.0
+    },
+    "accuracy": 0.44970414201183434,
+    "macro avg": {
+      "precision": 0.45260595647193586,
+      "recall": 0.45351123595505616,
+      "f1-score": 0.4484682598168228,
+      "support": 169.0
+    },
+    "weighted avg": {
+      "precision": 0.4536506096775725,
+      "recall": 0.44970414201183434,
+      "f1-score": 0.4470778923474349,
+      "support": 169.0
+    }
+  },
+  "accuracy": 0.44970414201183434
+}
