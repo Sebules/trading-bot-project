@@ -1,6 +1,9 @@
 
 import pandas as pd
-from alpaca_trade_api.rest import REST
+try:
+    from alpaca_trade_api.rest import REST
+except Exception:
+    REST = None
 
 
 def get_current_position_qty(api: REST, symbol: str) -> int:
@@ -24,5 +27,6 @@ def execute_signal(api: REST, symbol: str, signal: int, qty: int = 1):
             return f"🟡 Aucune action requise sur {symbol}"
     except Exception as e:
         return f"❌ Erreur exécution {symbol} : {e}"
+
 
 
