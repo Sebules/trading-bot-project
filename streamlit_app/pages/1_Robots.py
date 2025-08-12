@@ -144,10 +144,7 @@ with tabs[0]:
 with tabs[1]:
     # ─── ➊ SECTION : Sélection par prédiction ─────────────────────────
     st.header("🤖 Sélection par prédiction de mouvement")
-    if REST is None or TradingClient is None:
-          st.warning("Mode démo : les fonctionnalités Alpaca sont désactivées sur Streamlit Cloud.")
-          st.info("Pour les ordres et le bot, utilisez l’environnement local / script auto_bot.py.")
-          st.stop()  # ou return si c’est dans une fonction/page
+    
     st.subheader("🔄 Charger un modèle pré-entrainé")
 
     model_files = [f for f in os.listdir(ML_MODELS_DIR) if f.endswith(".json")]
