@@ -98,7 +98,7 @@ except Exception:
         st.stop()  # ou return si c’est dans une fonction/page
 
 # === OPENAI CHAT -appel du chat Emilio ===
-init_chat_with_emilio()
+#init_chat_with_emilio()
 st.title("🦙 Alpaca")
 tabs = st.tabs(["🦙 En temps réel", "⚙️ Passage d’ordres","🤖 Le Bot de Trading"])
 
