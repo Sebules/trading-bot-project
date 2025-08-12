@@ -20,11 +20,26 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report, accuracy_score
-from alpaca_trade_api.rest import REST
-from alpaca.trading.client import TradingClient
-from alpaca.trading.requests import GetPortfolioHistoryRequest, GetOrdersRequest
-from alpaca.trading.enums import QueryOrderStatus
-from alpaca.common.enums import Sort
+try:
+  from alpaca_trade_api.rest import REST
+except Exception:
+  REST = None
+try:
+  from alpaca.trading.client import TradingClient
+except Exception:
+  TradingClient = None
+try:
+  from alpaca.trading.requests import GetPortfolioHistoryRequest, GetOrdersRequest
+except Exception:
+  GetPortfolioHistoryRequest, GetOrdersRequest = None, None
+try:
+  from alpaca.trading.enums import QueryOrderStatus
+except Exception:
+  QueryOrderStatus = None
+try:
+  from alpaca.common.enums import Sort
+except Exception:
+  Sort = None
 
 root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 sys.path.insert(0, root)
@@ -84,7 +99,11 @@ tabs = st.tabs(["🦙 En temps réel", "⚙️ Passage d’ordres","🤖 Le Bot 
 # === CREATION MODELE MACHINE LEARNING ===
 with tabs[0]:
     st.header("🦙 Alpaca — En temps réel")
-
+    if REST is None or TradingClient is None:
+        st.warning("Mode démo : les fonctionnalités Alpaca sont désactivées sur Streamlit Cloud.")
+        st.info("Pour les ordres et le bot, utilisez l’environnement local / script auto_bot.py.")
+        st.stop()  # ou return si c’est dans une fonction/page
+  
     # === PORTFOLIO EN TEMPS RÉEL ALPACA ===
     st.subheader("📦 Portefeuille en temps réel (Alpaca)")
 
@@ -267,7 +286,11 @@ with tabs[0]:
 
 with tabs[1]:
     st.header("🦙 Alpaca — Passage d’ordres")
-
+    if REST is None or TradingClient is None:
+            st.warning("Mode démo : les fonctionnalités Alpaca sont désactivées sur Streamlit Cloud.")
+            st.info("Pour les ordres et le bot, utilisez l’environnement local / script auto_bot.py.")
+            st.stop()  # ou return si c’est dans une fonction/page
+  
     st.subheader("📋 Mémo des stratégies chargées")
     if "strategies_to_execute" in st.session_state:
         st.write("Le mémo des stratégies à exécuter est bien chargé dans la session :")
@@ -397,7 +420,11 @@ with tabs[1]:
 with tabs[2]:
     # === SECTION D'EXÉCUTION DU BOT AUTOMATIQUE ===
     st.subheader("🤖 Contrôle du Bot de Trading")
-
+    if REST is None or TradingClient is None:
+                st.warning("Mode démo : les fonctionnalités Alpaca sont désactivées sur Streamlit Cloud.")
+                st.info("Pour les ordres et le bot, utilisez l’environnement local / script auto_bot.py.")
+                st.stop()  # ou return si c’est dans une fonction/page
+  
     # Activation manuelle depuis l'interface
     activer_bot = st.toggle("🟢 Activer le bot sur le dernier rapport", value=False)
 
