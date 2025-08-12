@@ -92,12 +92,12 @@ if "data_dict" not in st.session_state:
 
 # === CHARGEMENT DE DONNÉES HISTORIQUES ===
 with tabs[0]:
-    try:
-        ALPHA_API_KEY = ALPHA_API_KEY #clé API Alpha VAntage
-        ts = TimeSeries(key=ALPHA_API_KEY, output_format='pandas')
-    except (KeyError, AttributeError):
-        st.error("🔑 Clé d'API ALPHA VANTAGE non trouvée. Veuillez la configurer dans `.streamlit/secrets.toml`.")
-        st.stop()
+    #try:
+        #ALPHA_API_KEY = ALPHA_API_KEY #clé API Alpha VAntage
+        #ts = TimeSeries(key=ALPHA_API_KEY, output_format='pandas')
+    #except (KeyError, AttributeError):
+        #st.error("🔑 Clé d'API ALPHA VANTAGE non trouvée. Veuillez la configurer dans `.streamlit/secrets.toml`.")
+        #st.stop()
 
     st.header("🧮 Configuration du portefeuille")
 
@@ -128,30 +128,30 @@ with tabs[0]:
                     st.warning(f"Erreur avec yfinance pour {ticker} : {e}")
                     st.info(f"Tentative avec Alpha Vantage pour {ticker}...")
 
-                    try:
-                        av_data, meta = ts.get_daily(symbol=ticker, outputsize='full')
-                        start_dt = pd.to_datetime(start_date)
-                        end_dt = pd.to_datetime(end_date)
-                        av_data = av_data[(av_data.index >= start_dt) & (av_data.index <= end_dt)]
-                        av_data = av_data.rename(columns={
-                            '1. open': 'Open',
-                            '2. high': 'High',
-                            '3. low': 'Low',
-                            '4. close': 'Close',
-                            '5. volume': 'Volume'
-                        })
+                    #try:
+                        #av_data, meta = ts.get_daily(symbol=ticker, outputsize='full')
+                        #start_dt = pd.to_datetime(start_date)
+                        #end_dt = pd.to_datetime(end_date)
+                        #av_data = av_data[(av_data.index >= start_dt) & (av_data.index <= end_dt)]
+                        #av_data = av_data.rename(columns={
+                            #'1. open': 'Open',
+                            #'2. high': 'High',
+                            #'3. low': 'Low',
+                            #'4. close': 'Close',
+                            #'5. volume': 'Volume'
+                        #})
 
-                        if not av_data.empty:
-                            av_data = av_data[~av_data.index.duplicated(keep="first")]
-                            st.session_state["data_dict"][ticker] = av_data
-                            st.success(f"{ticker} récupéré via Alpha Vantage ✅ ({len(av_data)} lignes)")
-                            av_data.to_csv(os.path.join(DATA_DIR, f"{ticker}_{timestamp}.csv"))
-                            st.success(f"{ticker}_{timestamp} sauvegardé dans data/")
-                        else:
-                            st.warning(f"Aucune donnée pour {ticker} via Alpha Vantage")
+                        #if not av_data.empty:
+                            #av_data = av_data[~av_data.index.duplicated(keep="first")]
+                            #st.session_state["data_dict"][ticker] = av_data
+                            #st.success(f"{ticker} récupéré via Alpha Vantage ✅ ({len(av_data)} lignes)")
+                            #av_data.to_csv(os.path.join(DATA_DIR, f"{ticker}_{timestamp}.csv"))
+                            #st.success(f"{ticker}_{timestamp} sauvegardé dans data/")
+                        #else:
+                            #st.warning(f"Aucune donnée pour {ticker} via Alpha Vantage")
 
-                    except Exception as av_e:
-                        st.error(f"Échec aussi avec Alpha Vantage pour {ticker} : {av_e}")
+                    #except Exception as av_e:
+                        #st.error(f"Échec aussi avec Alpha Vantage pour {ticker} : {av_e}")
 
     # === AFFICHAGE D’UN TICKER ===
     if st.session_state["data_dict"]:
