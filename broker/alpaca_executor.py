@@ -1,6 +1,9 @@
 # alpaca_executor.py
 from pathlib import Path
-from alpaca.trading.client import TradingClient
+try:
+    from alpaca.trading.client import TradingClient
+except Exception:
+    TradingClient = None
 import pandas as pd
 from utils.report_utils import extract_symbol, best_strategy_and_signal
 import logging
