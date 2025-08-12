@@ -23,10 +23,7 @@ from utils.risk_management import _load_daily_risk_used, _save_daily_risk_used
 try:
   api = REST(ALPACA_API_KEY, ALPACA_SECRET_KEY, base_url=ALPACA_PAPER_URL)
 except Exception:
-  if REST is None or TradingClient is None:
-        st.warning("Mode démo : les fonctionnalités Alpaca sont désactivées sur Streamlit Cloud.")
-        st.info("Pour les ordres et le bot, utilisez l’environnement local / script auto_bot.py.")
-        st.stop()  # ou return si c’est dans une fonction/page
+  api = None
 
 # ==== DIRECTORIES ====
 DATA_DIR = DATA_ROOT
@@ -210,4 +207,5 @@ if __name__ == "__main__":
 
 
     print("✅ Terminé à", datetime.now())
+
 
