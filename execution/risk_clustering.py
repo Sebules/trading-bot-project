@@ -3,7 +3,10 @@ import time
 import logging
 import os
 import sys
-from alpaca_trade_api.rest import REST, TimeFrame
+try:
+    from alpaca_trade_api.rest import REST, TimeFrame
+except Exception:
+    REST, TimeFrame = None, None
 from sklearn.cluster import KMeans
 from datetime import datetime, timedelta
 import plotly.express as px
@@ -165,5 +168,6 @@ def build_cluster_scatter(stats: pd.DataFrame, k_clusters: int, search, *,render
         y_pad = (stats["vol"].max() - stats["vol"].min()) * 0.05
         fig.update_xaxes(range=[row["mean"] - x_pad, row["mean"] + x_pad])
         fig.update_yaxes(range=[row["vol"] - y_pad, row["vol"] + y_pad])
+
 
     return fig
