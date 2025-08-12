@@ -177,7 +177,7 @@ with tabs[1]:
 
     # ─── ➋ SECTION : Sélection par risque ────────────────────────────
     st.header("🛡️ Sélection par facteurs de risque")
-    
+    st.write("Ne fonctionne pas en mode Démo car Alpaca non actif")
     try:
       symbols = get_tradeable_symbols(api)
     except Exception:
