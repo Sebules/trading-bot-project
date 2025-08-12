@@ -24,7 +24,10 @@ def get_tradeable_symbols(api: REST) -> list[str]:
     """
     Récupère depuis Alpaca la liste des symboles actifs et tradables.
     """
-    assets = api.list_assets(status="active")
+    try:
+        assets = api.list_assets(status="active")
+    except Exception:
+        assets = None
 
     # on ne veut que les symboles (strings)
     return [a.symbol for a in assets if a.tradable]
@@ -175,5 +178,6 @@ def build_cluster_scatter(stats: pd.DataFrame, k_clusters: int, search, *,render
 
 
     return fig
+
 
 
