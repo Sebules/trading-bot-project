@@ -91,7 +91,7 @@ if "data_dict" not in st.session_state:
 try:
   init_chat_with_emilio()
 except Exception:
-  continue
+  st.stop()
 
 # === CHARGEMENT DE DONNÉES HISTORIQUES ===
 with tabs[0]:
@@ -99,7 +99,7 @@ with tabs[0]:
         ALPHA_API_KEY = ALPHA_API_KEY #clé API Alpha VAntage
         ts = TimeSeries(key=ALPHA_API_KEY, output_format='pandas')
     except (KeyError, AttributeError):
-        st.error("🔑 Clé d'API OpenAI non trouvée. Veuillez la configurer dans `.streamlit/secrets.toml`.")
+        st.error("🔑 Clé d'API ALPHA VANTAGE non trouvée. Veuillez la configurer dans `.streamlit/secrets.toml`.")
         st.stop()
 
     st.header("🧮 Configuration du portefeuille")
