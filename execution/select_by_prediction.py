@@ -21,7 +21,13 @@ from strategies.bollinger_bands import BBStrategy
 from strategies.breakout_range_strategy import BreakoutRangeStrategy
 
 
-api = REST(ALPACA_API_KEY, ALPACA_SECRET_KEY, base_url=ALPACA_PAPER_URL)
+try:
+    api = REST(ALPACA_API_KEY, ALPACA_SECRET_KEY, base_url=ALPACA_PAPER_URL)
+except Exception:
+  if REST is None or TradingClient is None:
+        st.warning("Mode démo : les fonctionnalités Alpaca sont désactivées sur Streamlit Cloud.")
+        st.info("Pour les ordres et le bot, utilisez l’environnement local / script auto_bot.py.")
+        st.stop()  # ou return si c’est dans une fonction/page
 
 BASE_URL_AV = "https://www.alphavantage.co/query"
 try:
@@ -261,3 +267,4 @@ def predict_top_n(model, features_list: list[str], n: int = 20, metadata: dict =
     # trie et top-n
 
     return sorted(scores, key=lambda x: x[1], reverse=True)[:n]
+
