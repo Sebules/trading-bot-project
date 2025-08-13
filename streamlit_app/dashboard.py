@@ -122,8 +122,8 @@ with tabs[0]:
                         st.success(f"{ticker} récupéré ✅ ({len(df)} lignes)")
                         df.to_csv(os.path.join(DATA_DIR, f"{ticker}_{timestamp}.csv"))
                         st.success(f"{ticker}_{timestamp} sauvegardé dans data/")
-                    else:
-                        st.warning(f"Aucune donnée disponible pour {ticker}")
+                    #else:
+                        #st.warning(f"Aucune donnée disponible pour {ticker}")
                 except Exception as e:
                     st.warning(f"Erreur avec yfinance pour {ticker} : {e}")
                     st.info(f"Tentative avec Alpha Vantage pour {ticker}...")
