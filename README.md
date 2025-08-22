@@ -9,14 +9,17 @@ App Streamlit pour:
 
 ## Démo (screenshots)
 *(insère ici 2–3 captures “Passage d’ordres”, “Bot”, “Risk”)*
-<img width="1363" height="742" alt="image" src="https://github.com/user-attachments/assets/25c15f07-c4c9-4f62-b0f9-a2bc18dc19c6" />
-
-<img width="1375" height="737" alt="image" src="https://github.com/user-attachments/assets/fff223bc-dd39-4cc4-b3cb-eb2ad20cc851" />
-
 <img width="725" height="747" alt="image" src="https://github.com/user-attachments/assets/c80c365f-ca9a-4e26-b692-a739172380d7" />
 
 <img width="1847" height="786" alt="image" src="https://github.com/user-attachments/assets/241d6e6a-ab11-4ef3-9bc7-18854c81a115" />
 
+<img width="1363" height="742" alt="image" src="https://github.com/user-attachments/assets/25c15f07-c4c9-4f62-b0f9-a2bc18dc19c6" />
+
+<img width="1375" height="737" alt="image" src="https://github.com/user-attachments/assets/fff223bc-dd39-4cc4-b3cb-eb2ad20cc851" />
+
+
+
+<img width="1391" height="460" alt="image" src="https://github.com/user-attachments/assets/25da4f18-ad70-452b-a5ce-431e15c12ba1" />
 
 
 
@@ -34,3 +37,4 @@ scripts/auto_bot.py # bot automatique (cron / tâche planifiée)
 pip install -r requirements.txt
 
 streamlit run dashboard.py
+
