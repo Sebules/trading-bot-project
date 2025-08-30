@@ -1,6 +1,6 @@
 # 📊 Trading Algo Dashboard (Streamlit)
 
-Un tableau de bord **multi-outils** pour l’analyse de marché, la comparaison de stratégies, le ML, le risk management et l’**exécution (paper)** via Alpaca.
+Un tableau de bord **multi-outils** pour l’analyse de marché, la comparaison de stratégies, le ML (Machine Learning), le risk management et l’**exécution (paper)** via Alpaca.
 
 > ⚠️ **Avertissement** — Ce projet est fourni à titre éducatif. Rien n’est un conseil financier. Testez en *paper trading*.
 
@@ -55,6 +55,14 @@ logs/                 # journaux (ex. logs/auto_bot_py.log)
   - **Compte & Portefeuille (paper)**, equity, **Risk Dashboard** (Vol annualisée, VaR/ES 95 %).
   - **Plan d’ordres** avec garde‑fous (p.ex. blocage si Sharpe 30j < 0, plafond k % × VaR), liste et **soumission** via Alpaca.
   - **Auto‑bot one‑shot** : exécution locale via variables d’environnement (script `scripts/auto_bot.py`).
+
+<img width="725" height="747" alt="image_ALPACA_temps_reel" src="https://github.com/user-attachments/assets/6bcb9f20-14e3-4fc5-8800-dea15a4bdbfe" />
+<img width="1332" height="618" alt="image_ALPACA_temps_reel-diagramme" src="https://github.com/user-attachments/assets/5c476902-2e68-4559-ac7a-dd04a16846e4" />
+<img width="1386" height="747" alt="image_ALPACA_temps_reel-risk_dashboard" src="https://github.com/user-attachments/assets/213955fd-991d-475a-b0b7-1233aee2a84c" />
+<img width="1332" height="848" alt="image_ALPACA_temps_reel-liste_ordres" src="https://github.com/user-attachments/assets/8a255fb1-10f2-4907-a2f7-52acfe4a03e8" />
+<img width="1363" height="742" alt="image_ALPACA_passage_ordres" src="https://github.com/user-attachments/assets/1453f763-b782-4c26-9b55-d5c34040cfcf" />
+<img width="1375" height="737" alt="image_ALPACA_plan_reequilibrage" src="https://github.com/user-attachments/assets/8a1bb6ce-9e80-4fe4-83c3-90d808b5f525" />
+<img width="1391" height="460" alt="image_ALPACA_autobot" src="https://github.com/user-attachments/assets/93c7fc16-9e3f-4aad-a215-f312dcf8a5f0" />
 
 ---
 
@@ -138,6 +146,4 @@ Puis lance : `streamlit run dashboard.py`.
 
 ---
 
-## 📄 Licence
 
-Ajoute la licence de ton choix (ex. MIT) dans `LICENSE`.
