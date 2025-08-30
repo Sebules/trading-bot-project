@@ -6,13 +6,15 @@ Un tableau de bord **multi-outils** pour l’analyse de marché, la comparaison 
 
 ---
 
-## 🗂️ Arborescence ACTUELLE du dépôt
+## 🗂️ Arborescence du dépôt
 
 ```
 .
-├── dashboard.py      # Tableau de bord principal (chargement données, stratégies, comparaisons, graphes)
-├── 1_Robots.py       # Robots: ML (RF/SVC), clustering risque, optimisation de portefeuille
-├── 2_Alpaca.py       # Intégration Alpaca: compte/positions, Risk Dashboard (VaR/ES), passage d'ordres
+└── streamlit_app
+  ├── dashboard.py      # Tableau de bord principal (chargement données, stratégies, comparaisons, graphes)
+  └── pages/
+      ├── 1_Robots.py  # Robots: ML (RF/SVC), clustering risque, optimisation de portefeuille
+      └── 2_Alpaca.py  # Intégration Alpaca: compte/positions, Risk Dashboard (VaR/ES), passage d'ordres
 └── (répertoires Python requis par les imports, voir ci-dessous)
 ```
 
@@ -78,7 +80,7 @@ logs/                 # journaux (ex. logs/auto_bot_py.log)
 
 ### 🔑 Secrets / configuration
 
-Créer `.streamlit/secrets.toml` :
+Créer `.streamlit/secrets.toml` dans le dossier **`streamlit_app/`** ou rajouter les secrets dans le le fichier `.env`:
 
 ```toml
 # Market data
@@ -100,33 +102,13 @@ SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/..."
 
 ---
 
-## ▶️ Lancer l’application (avec arborescence ACTUELLE)
+## ▶️ Lancer l’application
 
-Tes 3 pages sont à la **racine** du dépôt. Lance‑les **séparément** :
+Tes 3 pages sont dans le dossier **`streamlit_app/`** du dépôt. `1_Robots.py` et `2_Alpaca.py` sont dans le dossier **`pages/`** à côté de `dashboard.py`. Lance l'appli multipage avec menu :
 
 ```bash
-# Tableau de bord principal
 streamlit run dashboard.py
-
-# Robots / ML
-streamlit run 1_Robots.py
-
-# Alpaca (compte, risque, ordres)
-streamlit run 2_Alpaca.py
 ```
-
-### 💡 Option multi‑pages (navigation automatique)
-Si tu préfères une appli multipage avec menu, déplace ces fichiers dans un dossier **`pages/`** à côté de `dashboard.py` :
-```
-.
-├── dashboard.py
-└── pages/
-    ├── 1_Robots.py
-    └── 2_Alpaca.py
-```
-Puis lance : `streamlit run dashboard.py`.
-
----
 
 ## 🔁 Flux typique
 
